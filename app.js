@@ -33,19 +33,22 @@ app.locals.scripts = config.scripts;
 app.locals.stylesheets = config.stylesheets;
 
 
+
 // ======
 // routes
 // ======
 
-app.get('/', function(req, res){
-  res.render('index', {});
-});
+var routes = {
+  index: require('./routes/index')
+};
+
+app.use(routes.index);
 
 // send 404s to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Page not found');
-    err.status = 404;
-    next(err);
+  var err = new Error('Page not found');
+  err.status = 404;
+  next(err);
 });
 
 
