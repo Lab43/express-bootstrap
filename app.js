@@ -38,6 +38,39 @@ app.get('/', function(req, res){
   res.render('index', {});
 });
 
+// send 404s to error handler
+app.use(function(req, res, next) {
+    var err = new Error('Page not found');
+    err.status = 404;
+    next(err);
+});
+
+
+
+// =============
+// error handler
+// =============
+
+// development, include stack trace
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
+  });
+}
+
+// production, no stacktrace
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
+
 
 
 // ======
