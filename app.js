@@ -1,4 +1,6 @@
 var express = require('express')
+  , app = express()
+  , config = require('./config')(app.get('env'))
   , morgan = require('morgan')
   , path = require('path')
   , favicon = require('serve-favicon')
@@ -13,8 +15,6 @@ var express = require('express')
 // configure express app
 // =====================
 
-var app = express();
-
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +27,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/bower', express.static(path.join(__dirname, 'bower')));
 
+app.locals.scripts = config.scripts;
+app.locals.stylesheets = config.stylesheets;
 
 
 // ======

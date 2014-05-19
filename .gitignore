@@ -4,3 +4,13 @@
 # modules
 /node_modules
 npm-debug.log
+
+# bower
+/bower
+
+# sass
+/.sass-cache
+/public/css
+
+# minified js
+/public/js/all.js
