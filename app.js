@@ -4,6 +4,7 @@ var express = require('express')
   , favicon = require('serve-favicon')
   , bodyParser = require('body-parser')
   , cookieParser = require('cookie-parser')
+  , swig = require('swig')
 ;
 
 
@@ -13,6 +14,12 @@ var express = require('express')
 // =====================
 
 var app = express();
+
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
+app.set('views', path.join(__dirname, 'views'));
+// disable swig template cache. express automatically caches templates in production
+swig.setDefaults({ cache: false });
 
 app.use(favicon(path.join(__dirname, 'public/favicon.ico')));
 app.use(morgan('dev'));
@@ -28,7 +35,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 // ======
 
 app.get('/', function(req, res){
-  res.send('hello world');
+  res.render('index', {});
 });
 
 
