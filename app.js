@@ -1,4 +1,8 @@
-var express = require('express');
+var express = require('express')
+  , morgan = require('morgan')
+  , path = require('path')
+  , favicon = require('serve-favicon')
+;
 
 
 
@@ -7,6 +11,9 @@ var express = require('express');
 // =====================
 
 var app = express();
+
+app.use(favicon(path.join(__dirname, 'public/favicon.ico')));
+app.use(morgan('dev'));
 
 
 

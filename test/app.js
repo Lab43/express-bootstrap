@@ -20,3 +20,12 @@ describe('GET /foo', function () {
     ;
   });
 });
+
+describe('GET /favicon.ico', function () {
+  it('should return a favicon', function (done) {
+    request(server)
+      .get('/favicon.ico')
+      .expect('Content-Type', 'image/x-icon')
+      .expect(200, done);
+  })
+});
