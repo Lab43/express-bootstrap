@@ -1,9 +1,7 @@
 Express Bootstrap
 =================
 
-[![Build Status](https://api.travis-ci.org/eusonic/express-bootstrap.png)](https://travis-ci.org/eusonic/express-bootstrap)
-
-[![Dependency Status](https://david-dm.org/eusonic/express-bootstrap.png)](https://david-dm.org/eusonic/express-bootstrap)
+[![Build Status][1]][2] [![Dependency Status][3]][4] [![Development Dependency Status][5]][6]
 
 
 ## Set up development environment
@@ -42,3 +40,13 @@ MORE TO COME
 $ gulp compile-scss
 $ gulp minify
 ```
+
+
+[1]: https://travis-ci.org/eusonic/express-bootstrap.svg?branch=master
+[2]: https://travis-ci.org/eusonic/express-bootstrap
+
+[3]: https://david-dm.org/eusonic/express-bootstrap.svg
+[4]: https://david-dm.org/eusonic/express-bootstrap
+
+[5]: https://david-dm.org/eusonic/express-bootstrap/dev-status.svg
+[6]: https://david-dm.org/eusonic/express-bootstrap#info=devDependencies
