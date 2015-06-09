@@ -1,8 +1,6 @@
 Express Bootstrap
 =================
 
-[![Build Status][1]][2] [![Dependency Status][3]][4] [![Development Dependency Status][5]][6]
-
 
 ## Set up development environment
 ```
