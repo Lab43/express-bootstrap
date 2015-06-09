@@ -40,13 +40,3 @@ MORE TO COME
 $ gulp compile-scss
 $ gulp minify
 ```
-
-
-[1]: https://travis-ci.org/eusonic/express-bootstrap.svg?branch=master
-[2]: https://travis-ci.org/eusonic/express-bootstrap
-
-[3]: https://david-dm.org/eusonic/express-bootstrap.svg
-[4]: https://david-dm.org/eusonic/express-bootstrap
-
-[5]: https://david-dm.org/eusonic/express-bootstrap/dev-status.svg
-[6]: https://david-dm.org/eusonic/express-bootstrap#info=devDependencies
